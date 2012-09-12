@@ -3,7 +3,7 @@
     "development" => "http://localhost",
     "qa" => "http://qa.mycompany.com",
     "staging" => "http://stage.mycompany.com",
-    "production" => "http://www.mycompany.com"
+    "production" => "http://petitions.whitehouse.gov"
   );
 
   $timeout = 45; // seconds
@@ -22,7 +22,7 @@
     // $GLOBALS['settings']['proxy'] = "localhost:9090";  
     // $GLOBALS['settings']['proxy.browsermob'] = true;
 
-  $GLOBALS['settings']['webserver'] = $sites["qa"];
+  $GLOBALS['settings']['webserver'] = $sites["production"];
   if ($GLOBALS['settings']['sauce.ondemand'])
   {
       require_once("saucelabs.inc");
