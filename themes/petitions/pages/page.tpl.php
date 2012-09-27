@@ -378,9 +378,10 @@ if(oh<sh)o.height(o.siblings().height());
         <div class="link-wrapper">
           <span class="view-my-link authenticated"><?php print l(t('View My Petitions'), 'dashboard'); ?></span>
           <span class="float-right">
-            <span class="loginout anonymous"><?php print l(t('Log In'), 'user/login');?></span>
+            <?php $destination = drupal_get_destination(); ?>
+            <span class="loginout anonymous"><?php print l(t('Log In'), 'user/login', array('query' => $destination, 'attributes' => array('id' => 'login-link')));?></span>
             <span class="anonymous">|</span>
-            <span class="register loginout anonymous"><?php print l(t('Create an Account'), 'user/register');?></span>
+            <span class="register loginout anonymous"><?php print l(t('Create an Account'), 'user/register', array('query' => $destination, 'attributes' => array('id' => 'register-link')));?></span>
             <span class="loginout authenticated"><?php print l(t('Logout'), 'user/logout');?></span>
           </span>
         </div><!--/link wrapper-->
