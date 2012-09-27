@@ -1,3 +1,16 @@
+<?php 
+$form_id = 'user_register_form';
+$current_captcha_setting = captcha_get_form_id_setting($form_id);
+if ($conf['enable_recaptcha'] && $current_captcha_setting != 'reCAPTCHA') {
+  $captcha_type = new stdClass();
+  $captcha_type->module = 'recaptcha';
+  $captcha_type->captcha_type = 'reCAPTCHA';
+} else {
+  $captcha_type = 'none';
+}
+captcha_set_form_id_setting($form_id, $captcha_type);
+?>
+
 <div id="petition-page">
   <div class="center-on-page clearfix" id="page-inner">
 <!--i Whitehouse header -->

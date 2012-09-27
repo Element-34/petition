@@ -48,7 +48,11 @@ Stop here. If you have not done this yet, add the settings below to settings.php
   'archive_petitions' => 'petition_tool_archive',
   'petition_response' => 'petition_tool_response',
   'petition_signatures' => 'petition_tool_signatures',
-);</pre>";
+);
+
+// toggles
+\$conf['enable_recpatcha'] = TRUE</pre>";
+
    drupal_set_message($text);
   }
 }

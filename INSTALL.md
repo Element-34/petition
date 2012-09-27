@@ -86,6 +86,9 @@ drush -y make --no-core --contrib-destination=. drupal-org.make
       #   'replicaSet' => 'petitions',
       #   'timeout' => 1,
       # );
+      
+      // toggles
+      $conf['enable_recpatcha'] = TRUE;
 ```
 
 6) To quickly, easily install the rest of the required modules, install:
@@ -192,3 +195,10 @@ Import the user_submit rule here (check "Overwrite"):
                                           // "white screen of death" (WSOD) pages.
        ini_set('display_startup_errors', TRUE);
 ```
+
+Feature Toggles
+---------------
+
+Sometimes you want to be able to quickly enable/disable something for a specific environment. Setting a _feature toggle_ allows you to do this. The toggles are in your instance's settings.php file.
+
+* _enable_recpatcha_ - TRUE|FALSE - enables or disables the recaptcha on the user registration form. Useful when you want to automate the creation of users through the front-end using WebDriver or similar
